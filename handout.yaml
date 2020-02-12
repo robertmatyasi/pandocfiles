@@ -1,0 +1,24 @@
+
+---
+#suppress-bibliography: true ## pandoc-citeproc related, but basically turns off bibliography
+classoption: twocolumn ## handouts are landscape, two columns
+geometry: landscape, margin=1in, columnsep=0.5in
+fontsize: 10pt
+subparagraph: yes ## required by sans-serif heading
+bibliography: /Users/robi/Dropbox/Pandocfiles/zotero.bib
+header-includes: ## fonts, sans-serif heading, make it cozy, []-> symbol, no page numbers
+ - |
+   ```{=latex}
+   \usepackage{MinionPro}
+   \usepackage{MyriadPro}
+   \usepackage[sf]{titlesec}
+   \input glyphtounicode
+   \pdfgentounicode=1
+   \newcommand{\boxright}{%`{=latex}'
+     \mathrel{\mathop\Box}\mathrel{\kern-1.7pt}\rightarrow
+   }
+   ```
+   \usepackage{titling}
+   \setlength{\droptitle}{-3em}
+   \pagenumbering{gobble}
+---

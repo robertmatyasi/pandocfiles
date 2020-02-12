@@ -1,0 +1,20 @@
+
+---
+subparagraph: yes ## required by sans-serif heading
+fontsize: 12pt
+geometry: margin=1.5in
+bibliography: /Users/robi/Dropbox/Pandocfiles/zotero.bib
+indent: true      ## indented text
+header-includes:  ## fonts, sans-serif heading, searchability, []-> symbol
+- |
+  ```{=latex}
+  \usepackage{MinionPro}
+  \usepackage{MyriadPro}
+  \usepackage[sf]{titlesec}
+  \input glyphtounicode
+  \pdfgentounicode=1
+  \newcommand{\boxright}{%`{=latex}'
+    \mathrel{\mathop\Box}\mathrel{\kern-1.7pt}\rightarrow
+  }
+  ```
+---
