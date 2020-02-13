@@ -17,17 +17,17 @@ HANDOUT=$(SRC2:.mdh=_h.pdf)
 ## Pandoc arguments, currently only one for citeproc citations
 PANDOC_ARGS=--filter pandoc-citeproc
 
-## Yaml for paper manuscripts
+## Path to yaml for paper manuscripts
 PANDOC_PAPER-YAML=/Users/robi/Dropbox/Pandocfiles/paper.yaml
 
-## Yaml for handouts
+## Path to yaml for handouts
 PANDOC_HANDOUT-YAML=/Users/robi/Dropbox/Pandocfiles/handout.yaml
+
+## Path to .tex snippet for formatting bibliography in pdf output
+BIBINDENT=/Users/robi/Dropbox/Pandocfiles/bibindent.tex
 
 ## Options for markdown tidying
 TIDYARGS=--standalone --atx-headers --wrap=none
-
-## Snippet file for formatting bibliography in pdf output
-BIBINDENT=/Users/robi/Dropbox/Pandocfiles/bibindent.tex
 
 ## Rules -- make pdf, make docx, make handout, tidy markdown
 pdf:		$(PDFS)
