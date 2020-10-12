@@ -17,8 +17,8 @@ header-includes: ## fonts, sans-serif heading, make it cozy, []-> symbol, no pag
    \newcommand{\boxright}{%`{=latex}'
      \mathrel{\mathop\Box}\mathrel{\kern-1.7pt}\rightarrow
    }
-   ```
    \usepackage{titling}
    \setlength{\droptitle}{-3em}
    \pagenumbering{gobble}
+   ```
 ---

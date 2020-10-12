@@ -15,7 +15,7 @@ DOCX=$(SRC:.md=.docx)
 HANDOUT=$(SRC2:.mdh=_h.pdf)
 
 ## Pandoc arguments, currently only one for citeproc citations
-PANDOC_ARGS=--filter pandoc-citeproc
+PANDOC_ARGS=--citeproc
 
 ## Path to .yaml for paper manuscripts
 PANDOC_PAPER-YAML=/Users/robi/Dropbox/Pandocfiles/paper.yaml

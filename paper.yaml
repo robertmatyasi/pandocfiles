@@ -9,9 +9,9 @@ reference-section-title: "References"
 header-includes:  ## fonts, sans-serif heading, searchability, []-> symbol
 - |
   ```{=latex}
+  \usepackage[sf]{titlesec}
   \usepackage{MinionPro}
   \usepackage{MyriadPro}
-  \usepackage[sf]{titlesec}
   \input glyphtounicode
   \pdfgentounicode=1
   \newcommand{\boxright}{%`{=latex}'
