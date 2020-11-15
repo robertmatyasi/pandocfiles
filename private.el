@@ -41,6 +41,8 @@
           (set-face-attribute 'fringe nil :background nil)
 				  (olivetti-set-width 80)))
 
+(setq company-global-modes '(not markdown-mode))
+
 ;; pandoc mode
 
 (setq pandoc-process-connection-type nil)

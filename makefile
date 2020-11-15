@@ -14,14 +14,17 @@ PDFS=$(SRC:.md=.pdf)
 DOCX=$(SRC:.md=.docx)
 HANDOUT=$(SRC2:.mdh=_h.pdf)
 
-## Pandoc arguments, currently only one for citeproc citations
-PANDOC_ARGS=--citeproc
-
 ## Path to .yaml for paper manuscripts
-PANDOC_PAPER-YAML=/Users/robi/Dropbox/Pandocfiles/paper.yaml
+PANDOC_PAPER-YAML= $${HOME}/Dropbox/Pandocfiles/paper.yaml
 
 ## Path to .yaml for handouts
-PANDOC_HANDOUT-YAML=/Users/robi/Dropbox/Pandocfiles/handout.yaml
+PANDOC_HANDOUT-YAML= $${HOME}/Dropbox/Pandocfiles/handout.yaml
+
+## Path to bibliography
+ZOTERO_BIB= $${HOME}/Dropbox/Pandocfiles/zotero.bib
+
+## Pandoc arguments, currently only one for citeproc citations
+PANDOC_ARGS=--citeproc --bibliography=$(ZOTERO_BIB)
 
 ## Options for markdown tidying
 TIDYARGS=--standalone --atx-headers --wrap=none

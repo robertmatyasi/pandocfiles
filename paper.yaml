@@ -3,7 +3,6 @@
 subparagraph: yes ## required by sans-serif heading
 fontsize: 12pt
 geometry: margin=1.5in
-bibliography: /Users/robi/Dropbox/Pandocfiles/zotero.bib
 indent: true      ## indented text
 reference-section-title: "References"
 header-includes:  ## fonts, sans-serif heading, searchability, []-> symbol
