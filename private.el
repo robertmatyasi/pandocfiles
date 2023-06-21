@@ -2,18 +2,10 @@
 ;; This file will not be affected by Castlemacs updates.
 
 ;; initial window size
-(setq initial-frame-alist
-      '(
-        (width . 120) ; character
-        (height . 64) ; lines
-        ))
 
-;; default/sebsequent window size
-(setq default-frame-alist
-      '(
-        (width . 120) ; character
-        (height . 62) ; lines
-        ))
+(when window-system
+  (set-frame-position (selected-frame) 0 0)
+  (set-frame-size (selected-frame) 95 50))
 
 ;; set default font
 (set-face-attribute 'default nil
@@ -23,13 +15,22 @@
                     :width 'normal)
 
 ;; dashboard
-(dashboard-setup-startup-hook)
-(setq dashboard-startup-banner 'logo)
-(setq dashboard-items '((recents  . 20)
-			(bookmarks . 5)))
-(setq dashboard-set-heading-icons t)
-(setq dashboard-set-file-icons t)
-(setq dashboard-center-content t)
+;; (dashboard-setup-startup-hook)
+;; (setq dashboard-startup-banner 'logo)
+;; (setq dashboard-items '((recents  . 10)
+			;; (bookmarks . 5)))
+;; (setq dashboard-set-heading-icons t)
+;; (setq dashboard-set-file-icons t)
+;; (setq dashboard-center-content t)
+
+;; Use a hook so the message doesn't get clobbered by other messages.
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
 
 (add-to-list 'auto-mode-alist '("\\.mdh\\'" . markdown-mode))
 
@@ -57,15 +58,15 @@
 
 ;; dired
 
-(add-hook 'dired-mode-hook 'dired-hide-details-mode)
-(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+;; (add-hook 'dired-mode-hook 'dired-hide-details-mode)
+;; (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 ;; neotree
 
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
 ;; bibtex completer
 (setq bibtex-completion-bibliography
-      '("/Users/robi/Dropbox/Pandocfiles/zotero.bib"))
+      '("Users/robi/Dropbox/Pandocfiles/zotero.bib"))
 (setq ivy-bibtex-default-action 'ivy-bibtex-insert-key)
 (global-set-key (kbd "C-c C-x b") 'ivy-bibtex)

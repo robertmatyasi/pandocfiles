@@ -1,6 +1,6 @@
 
 ---
-subparagraph: yes ## required by sans-serif heading
+fontfamily: "MinionPro, MyriadPro"
 fontsize: 12pt
 geometry: margin=1.5in
 indent: true      ## indented text
@@ -9,8 +9,6 @@ header-includes:  ## fonts, sans-serif heading, searchability, []-> symbol
 - |
   ```{=latex}
   \usepackage[sf]{titlesec}
-  \usepackage{MinionPro}
-  \usepackage{MyriadPro}
   \input glyphtounicode
   \pdfgentounicode=1
   \newcommand{\boxright}{%`{=latex}'

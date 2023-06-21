@@ -4,12 +4,10 @@
 classoption: twocolumn ## handouts are landscape, two columns
 geometry: landscape, margin=1in, columnsep=0.5in
 fontsize: 10pt
-subparagraph: yes ## required by sans-serif heading
+fontfamily: "MinionPro, MyriadPro"
 header-includes: ## fonts, sans-serif heading, make it cozy, []-> symbol, no page numbers
  - |
    ```{=latex}
-   \usepackage{MinionPro}
-   \usepackage{MyriadPro}
    \usepackage[sf]{titlesec}
    \input glyphtounicode
    \pdfgentounicode=1
