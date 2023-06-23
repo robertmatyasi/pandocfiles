@@ -5,7 +5,7 @@ classoption: twocolumn ## handouts are landscape, two columns
 geometry: landscape, margin=1in, columnsep=0.5in
 fontsize: 10pt
 fontfamily: "MinionPro, MyriadPro"
-header-includes: ## fonts, sans-serif heading, make it cozy, []-> symbol, no page numbers
+header-includes: ## sans-serif heading, make it cozy, []-> symbol, no page numbers
  - |
    ```{=latex}
    \usepackage[sf]{titlesec}
