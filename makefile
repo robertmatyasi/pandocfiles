@@ -15,13 +15,13 @@ DOCX=$(SRC:.md=.docx)
 HANDOUT=$(SRC2:.mdh=_h.pdf)
 
 ## Path to .yaml for paper manuscripts
-PANDOC_PAPER-YAML= $${HOME}/Dropbox/Pandocfiles/paper.yaml
+PANDOC_PAPER-YAML= $${HOME}/Dropbox/code/pandocfiles/paper.yaml
 
 ## Path to .yaml for handouts
-PANDOC_HANDOUT-YAML= $${HOME}/Dropbox/Pandocfiles/handout.yaml
+PANDOC_HANDOUT-YAML= $${HOME}/Dropbox/code/pandocfiles/handout.yaml
 
 ## Path to bibliography
-ZOTERO_BIB= $${HOME}/Dropbox/Pandocfiles/zotero.bib
+ZOTERO_BIB= $${HOME}/Dropbox/code/pandocfiles/zotero.bib
 
 ## Pandoc arguments, currently only one for citeproc citations
 PANDOC_ARGS=--citeproc --bibliography=$(ZOTERO_BIB)
@@ -37,17 +37,17 @@ handout:	$(HANDOUT)
 %.pdf:		%.md
 		pandoc -N $(PANDOC_ARGS) -o $@ $< \
 		--metadata-file=$(PANDOC_PAPER-YAML)
-		open $@
+##		open $@
 
 %.docx:	%.md
 		pandoc $(PANDOC_ARGS) -o $@ $< \
 		--metadata-file=$(PANDOC_PAPER-YAML)
-		open $@
+##		open $@
 
-%_h.pdf:	%.mdh
+%_handout.pdf:	%_h.md
 		pandoc $(PANDOC_ARGS) -f markdown  -o $@ $< \
 		--metadata-file=$(PANDOC_HANDOUT-YAML)
-		open $@
+##		open $@
 
 %_tidy.md:	%.md
 		pandoc $(TIDYARGS) -o $@ $<
